@@ -1,0 +1,5 @@
+x-xxx-xxxxx-x
+最后一位是前面的每一位依次乘以从一累加的数
+检验是否错误
+最大的收获就是s[0] - '0'  // 表示将字符s[0]的ASCII码与字符0的ASCII码相减，如果s[0]是字符0~9，则表示将该字符变为对应的数字（int型）
+#include"iostream"#include"cstring"using namespace std;int main(){ int a[10]; string s; int sum=0; cin>>s; a[0]=s[0]-'0'; a[1]=s[2]-'0'; a[2]=s[3]-'0'; a[3]=s[4]-'0'; a[4]=s[6]-'0'; a[5]=s[7]-'0'; a[6]=s[8]-'0'; a[7]=s[9]-'0'; a[8]=s[10]-'0'; a[9]=s[12]-'0'; for(int i=0,j=1;i<9;i++,j++) {  sum=sum+a[i]*j; } int m=sum%11; char c=m==10?'x':(char)('0'+m); if(s[12]==c) {  cout<<"Right"<<endl; }else{  s[12]=c;  cout<<s<<endl; } return 0;}
